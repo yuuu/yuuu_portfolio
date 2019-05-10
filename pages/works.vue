@@ -20,9 +20,9 @@
                   {{ product.description }}
                 </v-card-text>
                 <v-card-actions>
-                  <a :href="product.url" target="_blank"
-                    ><v-btn color="secondary">詳細</v-btn></a
-                  >
+                  <v-btn color="secondary" :href="product.url" target="_blank">
+                    詳細
+                  </v-btn>
                 </v-card-actions>
               </v-card>
             </v-flex>
