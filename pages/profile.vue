@@ -15,13 +15,13 @@
               </p>
               <v-layout row wrap>
                 <template v-for="(data, i) in datasets">
-                  <v-flex :key="i" xs3 class="grey lighten-1 text-xs-center">
+                  <v-flex :key="i" xs3 class="accent text-xs-center">
                     {{ data.name }}
                   </v-flex>
                   <v-flex
                     :key="i"
                     xs9
-                    class="grey lighten-3"
+                    class="accent lighten-5"
                     v-html="data.description"
                   >
                   </v-flex>
