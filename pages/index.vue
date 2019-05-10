@@ -11,7 +11,7 @@
       </v-layout>
     </v-flex>
     <v-flex sm6 md6>
-      <v-img src="/logo.png" aspect-ratio="1" />
+      <v-img src="/icon.png" aspect-ratio="1" />
     </v-flex>
   </v-layout>
 </template>

@@ -29,7 +29,7 @@
     <v-toolbar color="primary" fixed app dark>
       <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer" />
       <v-btn icon active-class :to="'/'" color="grey lighten-3">
-        <v-img src="/logo.png" aspect-ratio="1" />
+        <v-img src="/icon.png" aspect-ratio="1" />
       </v-btn>
       <v-toolbar-title to="/" v-text="title" />
       <v-spacer />
