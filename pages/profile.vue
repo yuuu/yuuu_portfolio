@@ -1,70 +1,89 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
-        <logo />
-        <vuetify-logo />
-      </div>
+  <v-layout column justify-center>
+    <v-flex xs12>
       <v-card>
-        <v-card-title class="headline"
-          >Welcome to the Vuetify + Nuxt.js template</v-card-title
-        >
+        <v-card-title class="headline">
+          Profile
+        </v-card-title>
         <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a href="https://vuetifyjs.com" target="_blank">documentation</a>.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat"
-              >discord</a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-              >issue board</a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
-          <br />
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank"
-            >Nuxt GitHub</a
-          >
+          <v-layout row wrap>
+            <v-flex md6>
+              <p>
+                2018年から福岡でWebエンジニアしてます。<br />
+                2017年まで関西で組込みエンジニアしてました。<br />
+                ETロボコン2011～2013に参戦してました<br />
+              </p>
+              <v-layout row wrap>
+                <template v-for="(data, i) in datasets">
+                  <v-flex :key="i" md3 class="grey lighten-1 text-xs-center">
+                    {{ data.name }}
+                  </v-flex>
+                  <v-flex
+                    :key="i"
+                    md9
+                    class="grey lighten-3"
+                    v-html="data.description"
+                  >
+                  </v-flex>
+                </template>
+              </v-layout>
+              <v-divider class="my-3"></v-divider>
+              <v-layout row wrap>
+                <template v-for="(sns, i) in snsAccounts">
+                  <v-flex :key="i" md4 class="text-xs-center">
+                    <a :href="sns.url" target="_blank">
+                      <font-awesome-icon
+                        :icon="sns.icon"
+                        style="font-size: 30px;"
+                      />
+                    </a>
+                  </v-flex>
+                </template>
+              </v-layout>
+            </v-flex>
+            <v-flex md6 text-xs-center justify-center>
+              <v-avatar :size="240" color="grey lighten-4">
+                <v-img
+                  src="/profile.jpg"
+                  aspect-ratio="1"
+                  class="grey lighten-2"
+                />
+              </v-avatar>
+            </v-flex>
+          </v-layout>
         </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  data() {
+    return {
+      datasets: [
+        { name: '名前', description: '岡嵜 雄平(Yuhei Okazaki)' },
+        { name: '居住地', description: '福岡県' },
+        { name: '生年月日', description: '1989/7/27' },
+        {
+          name: '趣味',
+          description: 'Splatoon2, ボウリング, ルービックキューブ'
+        },
+        {
+          name: 'ブログ',
+          description:
+            '<a href="http://ylgbk.hatenablog.com/" target="_blank">.logbook</a>'
+        }
+      ],
+      snsAccounts: [
+        { icon: ['fab', 'twitter'], url: 'https://twitter.com/y_uuu' },
+        { icon: ['fab', 'github'], url: 'https://github.com/yuuu' },
+        {
+          icon: ['fab', 'facebook'],
+          url: 'https://www.facebook.com/yuhei.okazaki'
+        }
+      ]
+    }
   }
 }
 </script>
