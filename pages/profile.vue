@@ -15,12 +15,12 @@
               </p>
               <v-layout row wrap>
                 <template v-for="(data, i) in datasets">
-                  <v-flex :key="i" md3 class="grey lighten-1 text-xs-center">
+                  <v-flex :key="i" xs3 class="grey lighten-1 text-xs-center">
                     {{ data.name }}
                   </v-flex>
                   <v-flex
                     :key="i"
-                    md9
+                    xs9
                     class="grey lighten-3"
                     v-html="data.description"
                   >
@@ -30,7 +30,7 @@
               <v-divider class="my-3"></v-divider>
               <v-layout row wrap>
                 <template v-for="(sns, i) in snsAccounts">
-                  <v-flex :key="i" md4 class="text-xs-center">
+                  <v-flex :key="i" xs4 class="text-xs-center">
                     <a :href="sns.url" target="_blank">
                       <font-awesome-icon
                         :icon="sns.icon"
