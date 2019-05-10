@@ -10,7 +10,7 @@
             これまで制作したものを紹介します。
           </p>
           <v-layout row wrap>
-            <v-flex v-for="(product, i) in products" d-flex :key="i" md4>
+            <v-flex v-for="(product, i) in products" :key="i" d-flex md4>
               <v-card>
                 <v-img :src="product.image" aspect-ratio="2.75"></v-img>
                 <v-card-title class="headline">
@@ -65,6 +65,12 @@ export default {
           image: '/c2diary.png',
           description: '自分だけの日記をつけられるWebサービス',
           url: 'https://c2diary.herokuapp.com/'
+        },
+        {
+          name: "yuuu's portfolio",
+          image: '/portfolio.png',
+          description: 'このサイトです',
+          url: 'https://portfolio.y-uuu.net/'
         }
       ]
     }
