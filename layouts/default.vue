@@ -56,18 +56,23 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 export default {
+  components: {
+    FontAwesomeIcon
+  },
   data() {
     return {
       clipped: false,
       drawer: false,
       items: [
-        { icon: 'user-circle', title: 'Profile', to: '/profile' },
-        { icon: 'laptop', title: 'Works', to: '/works' },
-        { icon: 'wrench', title: 'Languages', to: '/languages' },
-        { icon: 'toolbox', title: 'Skills', to: '/skills' },
-        { icon: 'users', title: 'Community', to: '/community' },
-        { icon: 'envelope', title: 'Contact', to: '/contact' }
+        { icon: ['fas', 'user-circle'], title: 'Profile', to: '/profile' },
+        { icon: ['fas', 'laptop'], title: 'Works', to: '/works' },
+        { icon: ['fas', 'wrench'], title: 'Languages', to: '/languages' },
+        { icon: ['fas', 'toolbox'], title: 'Skills', to: '/skills' },
+        { icon: ['fas', 'users'], title: 'Community', to: '/community' },
+        { icon: ['fas', 'envelope'], title: 'Contact', to: '/contact' }
       ],
       title: "yuuu's portfolio"
     }

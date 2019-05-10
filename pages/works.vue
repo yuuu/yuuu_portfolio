@@ -1,70 +1,73 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
-        <logo />
-        <vuetify-logo />
-      </div>
+  <v-layout row>
+    <v-flex xs12>
       <v-card>
-        <v-card-title class="headline"
-          >Welcome to the Vuetify + Nuxt.js template</v-card-title
-        >
+        <v-card-title class="headline">
+          Works
+        </v-card-title>
         <v-card-text>
           <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
+            これまで制作したものを紹介します。
           </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a href="https://vuetifyjs.com" target="_blank">documentation</a>.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat"
-              >discord</a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-              >issue board</a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
-          <br />
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank"
-            >Nuxt GitHub</a
-          >
+          <v-layout row wrap>
+            <v-flex v-for="(product, i) in products" d-flex :key="i" md4>
+              <v-card>
+                <v-img :src="product.image" aspect-ratio="2.75"></v-img>
+                <v-card-title class="headline">
+                  {{ product.name }}
+                </v-card-title>
+                <v-card-text>
+                  {{ product.description }}
+                </v-card-text>
+                <v-card-actions>
+                  <a :href="product.url" target="_blank"
+                    ><v-btn color="secondary">詳細</v-btn></a
+                  >
+                </v-card-actions>
+              </v-card>
+            </v-flex>
+          </v-layout>
         </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  data() {
+    return {
+      products: [
+        {
+          name: 'Redmine Nikoca Re Plugin',
+          image:
+            'https://raw.githubusercontent.com/yuuu/redmine_nikoca_re/master/assets/images/screenshot.png',
+          description: 'Redmineにニコカレ機能を追加するためのplugin',
+          url: 'https://github.com/yuuu/redmine_nikoca_re'
+        },
+        {
+          name: 'Minamoni',
+          image:
+            'https://raw.githubusercontent.com/yuuu/Minamoni/master/screenshot/screenshot.png',
+          description:
+            'ETロボコンにおいて走行体の入出力をモニタリングするためのツール',
+          url: 'https://github.com/yuuu/Minamoni'
+        },
+        {
+          name: 'aws-serverless-gyazo',
+          image:
+            'https://tech.fusic.co.jp/wp-content/uploads/2019/02/Untitled12.png',
+          description: 'AWS上でサーバーレスに構築可能なGyazoシステム',
+          url: 'https://github.com/yuuu/aws-serverless-gyazo'
+        },
+        {
+          name: 'C2Diary',
+          image: '/c2diary.png',
+          description: '自分だけの日記をつけられるWebサービス',
+          url: 'https://c2diary.herokuapp.com/'
+        }
+      ]
+    }
   }
 }
 </script>
