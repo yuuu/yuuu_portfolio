@@ -1,5 +1,5 @@
 <template>
-  <v-layout column justify-center>
+  <v-layout row justify-center>
     <v-flex xs12>
       <v-card>
         <v-card-title class="headline">
