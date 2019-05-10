@@ -2,10 +2,10 @@
   <v-app>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
       app
+      class="hidden-md-and-up"
     >
       <v-list>
         <v-list-tile
@@ -16,7 +16,9 @@
           exact
         >
           <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-layout justify-center>
+              <font-awesome-icon :icon="item.icon" style="font-size: 30px;" />
+            </v-layout>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title" />
@@ -25,10 +27,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="primary" fixed app dark>
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
+      <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer" />
       <v-btn icon active-class :to="'/'" color="grey lighten-3">
         <img src="/logo.png" alt="logo" />
       </v-btn>
@@ -61,14 +60,13 @@ export default {
       clipped: false,
       drawer: false,
       items: [
-        { icon: 'apps', title: 'Profile', to: '/profile' },
-        { icon: 'apps', title: 'Works', to: '/works' },
-        { icon: 'apps', title: 'Languages', to: '/languages' },
-        { icon: 'apps', title: 'Skills', to: '/skills' },
-        { icon: 'apps', title: 'Community', to: '/community' },
-        { icon: 'apps', title: 'Contact', to: '/contact' }
+        { icon: 'user-circle', title: 'Profile', to: '/profile' },
+        { icon: 'laptop', title: 'Works', to: '/works' },
+        { icon: 'wrench', title: 'Languages', to: '/languages' },
+        { icon: 'toolbox', title: 'Skills', to: '/skills' },
+        { icon: 'users', title: 'Community', to: '/community' },
+        { icon: 'envelope', title: 'Contact', to: '/contact' }
       ],
-      miniVariant: false,
       title: "yuuu's portfolio"
     }
   }

@@ -42,7 +42,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/pwa', 'nuxt-fontawesome'],
 
   /*
    ** Build configuration
@@ -69,5 +69,13 @@ export default {
         })
       }
     }
+  },
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      }
+    ]
   }
 }
