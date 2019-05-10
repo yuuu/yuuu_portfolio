@@ -29,7 +29,7 @@
     <v-toolbar color="primary" fixed app dark>
       <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer" />
       <v-btn icon active-class :to="'/'" color="grey lighten-3">
-        <img src="/logo.png" alt="logo" />
+        <v-img src="/logo.png" aspect-ratio="1" />
       </v-btn>
       <v-toolbar-title to="/" v-text="title" />
       <v-spacer />
@@ -42,7 +42,9 @@
     </v-toolbar>
     <v-content>
       <v-container grid-list-md>
-        <nuxt />
+        <transition name="fade">
+          <nuxt />
+        </transition>
       </v-container>
     </v-content>
     <v-footer :fixed="true" color="primary" dark app>
@@ -72,3 +74,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
