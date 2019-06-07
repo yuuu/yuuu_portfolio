@@ -71,8 +71,7 @@ export default {
         { icon: ['fas', 'laptop'], title: 'Works', to: '/works' },
         { icon: ['fas', 'wrench'], title: 'Languages', to: '/languages' },
         { icon: ['fas', 'toolbox'], title: 'Skills', to: '/skills' },
-        { icon: ['fas', 'users'], title: 'Community', to: '/community' },
-        { icon: ['fas', 'envelope'], title: 'Contact', to: '/contact' }
+        { icon: ['fas', 'users'], title: 'Community', to: '/community' }
       ],
       title: "yuuu's portfolio"
     }

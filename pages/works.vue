@@ -71,6 +71,12 @@ export default {
           image: '/portfolio.png',
           description: 'このサイトです',
           url: 'https://portfolio.y-uuu.net/'
+        },
+        {
+          name: 'Tigers Eye',
+          image: '/tigers-eye.png',
+          description: '阪神タイガースの試合状況をSlackへ通知するアプリです',
+          url: 'https://github.com/yuuu/tigers-eye'
         }
       ]
     }
